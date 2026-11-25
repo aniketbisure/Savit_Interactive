@@ -1,0 +1,52 @@
+// Prisma Schema for AI Website & Competitor Audit Tool
+// PostgreSQL Database
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Audit {
+  id                String   @id @default(uuid())
+  primaryUrl        String
+  competitorUrl1    String?
+  competitorUrl2    String?
+  industry          String?
+  targetAudience    String?
+  serviceProduct    String?
+  auditObjective    String?
+  
+  // Status: PENDING | PROCESSING | COMPLETED | FAILED
+  status            String   @default("PENDING")
+  errorMessage      String?
+
+  // Scores (0 - 100)
+  overallScore      Int?
+  seoScore          Int?
+  uxScore           Int?
+
+  // Extracted Data (Primary and Competitor websites)
+  extractedData     Json?
+
+  // Deterministic Factual Audit Results
+  seoFindings       Json?
+  uxFindings        Json?
+
+  // Side-by-side Competitor Comparison Data
+  competitorData    Json?
+
+  // AI Generated Strategic Report (JSON output)
+  aiReport          Json?
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([createdAt])
+  @@index([primaryUrl])
+  @@index([status])
+}
