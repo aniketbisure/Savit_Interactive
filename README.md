@@ -4,6 +4,14 @@ An enterprise-grade web application built for the **Savit Interactive Backend / 
 
 ---
 
+## 🎥 Video Walkthrough
+
+Watch the full interactive walkthrough of AuditAI (form submission, live diagnostic console, score gauges, competitor benchmarking, PDF export, and audit history):
+
+👉 **[Watch Demo Video on Google Drive](https://drive.google.com/file/d/1cijEqACpnYAr4nv1GFdJxbiOhLyluySL/view?usp=sharing)**
+
+---
+
 ## 🌟 Key Features
 
 - **Empirical Website Extraction:** Fast, resilient extraction of titles, descriptions, H1/H2/H3 headings, image alt coverage, internal/external link ratios, Schema.org JSON-LD, OpenGraph tags, canonicals, robots meta, mobile viewports, and conversion CTAs.
